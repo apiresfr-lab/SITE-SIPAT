@@ -49,11 +49,7 @@
     background:var(--verde);
     opacity:.5;
   }
-
-<header>
-<img src="logo-mosaic.png" alt="Logo Mosaic" width="150">
-<div class="eyebrow">Segurança começa com você</div>
-<h1>SIPAT <span>2026</span></h1>
+  header img{position:relative;z-index:1;margin-bottom:22px;}
 
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
@@ -150,68 +146,39 @@
   }
   .dia-head .titulo{font-size:18px;font-weight:700;}
 
+  /* separação por local (Chapadão / Terminal) dentro de cada dia */
+  .local-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--verde-escuro);
+    font-weight:700;
+    padding:12px 22px 6px;
+    background:#EEF3EF;
+    border-top:1px solid #E4E8E3;
+  }
+
   .atividade{
     display:flex;
     gap:18px;
-    padding:16px 22px;
+    padding:14px 22px;
     border-top:1px solid #EEF1EC;
   }
-  .atividade:first-of-type{border-top:none;}
+  .local-label + .atividade{border-top:none;}
   .hora{
     font-family:'JetBrains Mono',monospace;
     font-size:13px;
     color:var(--verde-escuro);
     font-weight:600;
-    min-width:96px;
+    min-width:110px;
     padding-top:2px;
   }
   .atv-txt strong{display:block;font-size:15px;color:var(--grafite);}
   .atv-txt span{font-size:13px;color:var(--cinza);}
+  .atv-txt span.local{display:block;margin-top:2px;}
 
-  .qr-section{
-    max-width:960px;
-    margin:16px auto 64px;
-    padding:0 24px;
-  }
-  .qr-card{
-    background:var(--grafite);
-    color:var(--branco);
-    border-radius:8px;
-    padding:40px;
-    display:flex;
-    align-items:center;
-    gap:32px;
-    flex-wrap:wrap;
-    justify-content:center;
-    position:relative;
-  }
-  .qr-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:8px;
-    border:2px dashed var(--amarelo);
-    opacity:.4;
-    pointer-events:none;
-    margin:8px;
-  }
-  .qr-img{
-    background:var(--branco);
-    padding:12px;
-    border-radius:6px;
-    line-height:0;
-  }
-  .qr-img img{display:block;width:170px;height:170px;}
-  .qr-txt{max-width:380px;}
-  .qr-txt .label{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    color:var(--amarelo);
-    letter-spacing:.1em;
-    text-transform:uppercase;
-  }
-  .qr-txt h3{font-size:22px;margin:8px 0 8px;}
-  .qr-txt p{font-size:14px;color:#C7CDC9;}
+  .destaque{background:#FFF3E9;}
 
   footer{
     text-align:center;
@@ -235,7 +202,7 @@
 <!-- ===== TOPO DA PÁGINA (título e frase de efeito) ===== -->
 <header>
   <div class="eyebrow">Se não for Seguro Não Faça</div>
-  <h1>SIPAT/SIPAMIN <span>2026</span></h1> <!-- troque o ano ou o texto aqui -->
+  <h1>SIPAT/SIPAMIN <span>2026</span></h1>
   <p class="sub">Semana Interna de Prevenção de Acidentes do Trabalho - Mosaic</p>
 </header>
 
@@ -243,140 +210,152 @@
 <div class="tema">
   <div class="tema-card">
     <div class="label">Tema desta edição</div>
-    <h2>XX XX XXX XX </h2> <!-- troque o tema aqui -->
+    <h2>Cuidar do Presente transforma o Futuro</h2>
   </div>
 </div>
 
 <main>
 
-  <!-- =========================================================
-       DIA 1 — cada dia segue esse MESMO padrão.
-       Para editar: troque o número (01), o dia da semana, o título
-       do dia, e dentro de cada "atividade" troque hora/título/quem.
-       Para ADICIONAR uma atividade: copie um bloco <div class="atividade">...</div>
-       inteiro e cole antes do </div> que fecha o dia.
-       Para REMOVER: apague o bloco <div class="atividade">...</div> inteiro.
-       ========================================================= -->
+  <!-- DIA 1 — 05/10/2026 — Segunda-feira -->
   <div class="dia">
     <div class="dia-head">
-      <span class="num">01</span> <!-- número do dia -->
+      <span class="num">01</span>
       <div class="info">
-        <div class="data">Terça-feira</div> <!-- dia da semana / data -->
-        <div class="titulo">XX XX XX</div> <!-- título/tema do dia -->
+        <div class="data">05/10/2026 · Segunda-feira</div>
+        <div class="titulo">Abertura do SIPAT</div>
       </div>
     </div>
-    <!-- cada atividade: horário + título (strong) + responsável (span) -->
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>ínicio</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>XX XX XX</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>Palestra: XX / PALESTRANTE: Maxan</span></div>
-    </div>
-      </div>
 
-       <div class="dia">
+    <div class="local-label">Chapadão</div>
+    <div class="atividade">
+      <div class="hora">07:45</div>
+      <div class="atv-txt"><strong>Abertura: "Cuidar do Presente transforma o Futuro"</strong><span>Palestrante: Raquel Rodovalho</span><span class="local">Local: Pátio da Ebec</span></div>
+    </div>
+    <div class="atividade destaque">
+      <div class="hora">11:30–14:30</div>
+      <div class="atv-txt"><strong>Blitz Segurança: Patrimonial</strong><span>CIPAMIN</span></div>
+    </div>
+
+    <div class="local-label">Terminal</div>
+    <div class="atividade destaque">
+      <div class="hora">11:30–14:30</div>
+      <div class="atv-txt"><strong>Blitz Segurança: Patrimonial</strong><span>CIPA</span></div>
+    </div>
+  </div>
+
+  <!-- DIA 2 — 06/10/2026 — Terça-feira -->
+  <div class="dia">
     <div class="dia-head">
-      <span class="num">01</span> <!-- número do dia -->
+      <span class="num">02</span>
       <div class="info">
-        <div class="data">Terça-feira</div> <!-- dia da semana / data -->
-        <div class="titulo">XX XX XX</div> <!-- título/tema do dia -->
+        <div class="data">06/10/2026 · Terça-feira</div>
+        <div class="titulo">Saúde e Prevenção</div>
       </div>
     </div>
-    <!-- cada atividade: horário + título (strong) + responsável (span) -->
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>ínicio</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>XX XX XX</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>Palestra: XX / PALESTRANTE: Maxan</span></div>
-    </div>
-      </div>
 
-<div class="dia">
+    <div class="local-label">Chapadão</div>
+    <div class="atividade">
+      <div class="hora">07:45</div>
+      <div class="atv-txt"><strong>Palestra: Doenças Crônicas e IST's</strong><span>Palestrante: Dr. Franco</span><span class="local">Local: Pátio EBEC</span></div>
+    </div>
+    <div class="atividade destaque">
+      <div class="hora">A partir das 11:30</div>
+      <div class="atv-txt"><strong>Ações Saúde Hiper Dia</strong><span>Local: Sala de Descanso</span></div>
+    </div>
+
+    <div class="local-label">Terminal</div>
+    <div class="atividade destaque">
+      <div class="hora">A partir das 11:30</div>
+      <div class="atv-txt"><strong>Ações Saúde Hiper Dia</strong><span>Local: Sala de Descanso</span></div>
+    </div>
+  </div>
+
+  <!-- DIA 3 — 07/10/2026 — Quarta-feira -->
+  <div class="dia">
     <div class="dia-head">
-      <span class="num">01</span> <!-- número do dia -->
+      <span class="num">03</span>
       <div class="info">
-        <div class="data">Quarta-feira</div> <!-- dia da semana / data -->
-        <div class="titulo">XX XX XX</div> <!-- título/tema do dia -->
+        <div class="data">07/10/2026 · Quarta-feira</div>
+        <div class="titulo">Bem-Estar e Meio Ambiente</div>
       </div>
     </div>
-    <!-- cada atividade: horário + título (strong) + responsável (span) -->
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>ínicio</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>XX XX XX</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>Palestra: XX / PALESTRANTE: Andressa</span></div>
-    </div>
-      </div>
 
-<div class="dia">
+    <div class="local-label">Chapadão</div>
+    <div class="atividade">
+      <div class="hora">07:45</div>
+      <div class="atv-txt"><strong>Palestra: Saúde e Bem-Estar</strong><span>Palestrante: Renata</span><span class="local">Local: Pátio EBEC</span></div>
+    </div>
+    <div class="atividade">
+      <div class="hora">09:30–15:30</div>
+      <div class="atv-txt"><strong>Visita Técnica – da Mina ao Beneficiamento</strong></div>
+    </div>
+    <div class="atividade destaque">
+      <div class="hora">11:30–14:30</div>
+      <div class="atv-txt"><strong>Almoço Especial</strong><span>Stands: Diphoterine, Pontos Cegos, Grades e Pisos, EPIs, Doação de Adubo/Impactos Ambientais</span><span class="local">Local: Sala de Descanso</span></div>
+    </div>
+
+    <div class="local-label">Terminal</div>
+    <div class="atividade destaque">
+      <div class="hora">11:30–14:30</div>
+      <div class="atv-txt"><strong>Almoço Especial</strong></div>
+    </div>
+  </div>
+
+  <!-- DIA 4 — 08/10/2026 — Quinta-feira -->
+  <div class="dia">
     <div class="dia-head">
-      <span class="num">01</span> <!-- número do dia -->
+      <span class="num">04</span>
       <div class="info">
-        <div class="data">Quinta-feira</div> <!-- dia da semana / data -->
-        <div class="titulo">XX XX XX</div> <!-- título/tema do dia -->
+        <div class="data">08/10/2026 · Quinta-feira</div>
+        <div class="titulo">Saúde Mental no Trabalho</div>
       </div>
     </div>
-    <!-- cada atividade: horário + título (strong) + responsável (span) -->
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>ínicio</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>XX XX XX</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>Palestra: XX / PALESTRANTE: Wellington</span></div>
-    </div>
-      </div>
 
-<div class="dia">
+    <div class="local-label">Chapadão</div>
+    <div class="atividade">
+      <div class="hora">07:45</div>
+      <div class="atv-txt"><strong>Palestra: Assédio e Riscos Psicossociais</strong><span>Palestrante: UNA</span><span class="local">Local: Pátio EBEC</span></div>
+    </div>
+    <div class="atividade">
+      <div class="hora">09:30–15:30</div>
+      <div class="atv-txt"><strong>Visita Técnica – da Mina ao Beneficiamento</strong></div>
+    </div>
+    <div class="atividade destaque">
+      <div class="hora">11:30–14:30</div>
+      <div class="atv-txt"><strong>Stands</strong><span>Diphoterine, EPIs, Doação de Adubo/Impactos Ambientais</span><span class="local">Local: Sala de Descanso</span></div>
+    </div>
+  </div>
+
+  <!-- DIA 5 — 09/10/2026 — Sexta-feira -->
+  <div class="dia">
     <div class="dia-head">
-      <span class="num">01</span> <!-- número do dia -->
+      <span class="num">05</span>
       <div class="info">
-        <div class="data">Sexta-feira</div> <!-- dia da semana / data -->
-        <div class="titulo">XX XX XX</div> <!-- título/tema do dia -->
+        <div class="data">09/10/2026 · Sexta-feira</div>
+        <div class="titulo">Encerramento do SIPAT</div>
       </div>
     </div>
-    <!-- cada atividade: horário + título (strong) + responsável (span) -->
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>ínicio</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>XX XX XX</strong><span>XX XX XX</span></div>
-    </div>
-    <div class="atividade">
-      <div class="hora">XX:XX–XX:XX</div>
-      <div class="atv-txt"><strong>Palestra: XX / PALESTRANTE: XX</span></div>
-    </div>
-      </div>
 
+    <div class="local-label">Chapadão</div>
+    <div class="atividade">
+      <div class="hora">07:45</div>
+      <div class="atv-txt"><strong>Encerramento: "Cuidar do Presente transforma o Futuro"</strong><span>Palestrante: Diego / Apoio: Maria</span><span class="local">Local: Pátio da Ebec</span></div>
+    </div>
+    <div class="atividade destaque">
+      <div class="hora">11:30</div>
+      <div class="atv-txt"><strong>Entrega de Picolés</strong></div>
+    </div>
 
+    <div class="local-label">Terminal</div>
+    <div class="atividade destaque">
+      <div class="hora">11:30</div>
+      <div class="atv-txt"><strong>Entrega de Picolés</strong></div>
+    </div>
+  </div>
 
 </main>
 
-<footer>MOSAIC · SIPAT 2026 · SE NÃO FOR SEGURO NÃO FAÇA! · NÃO EXISTE NADA TÃO URGENTE QUE NÃO POSSA SER FEITO COM PLANEJAMENTO E SEGURANÇA! · SEGURANÇA NÃO TEM POUPANÇA, TEMOS QUE TER COMPORTAMENTOS CORRETOS E SEGUROS TODOS OS DIAS! </footer>
+<footer>MOSAIC · SIPAT 2026 · SE NÃO FOR SEGURO NÃO FAÇA! · NÃO EXISTE NADA TÃO URGENTE QUE NÃO POSSA SER FEITO COM PLANEJAMENTO E SEGURANÇA! · SEGURANÇA NÃO TEM POUPANÇA, TEMOS QUE TER COMPORTAMENTOS CORRETOS E SEGUROS TODOS OS DIAS!</footer>
 
 </body>
 </html>
