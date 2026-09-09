@@ -19,6 +19,7 @@
     --cinza: #58635D;         /* cor do texto secundário */
     --off: #F4F6F3;           /* cor de fundo da página */
     --branco: #FFFFFF;
+    --verde-claro: #B8E0C8;   /* verde claro usado na 3ª frase do eyebrow */
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
@@ -51,20 +52,44 @@
   }
   header img{position:relative;z-index:1;margin-bottom:22px;}
 
+  /* ===== SLOGAN DA MOSAIC (canto superior direito) ===== */
+  .slogan-mosaic{
+    position:absolute;
+    top:20px;
+    right:24px;
+    z-index:2;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--amarelo);
+    text-align:right;
+    max-width:220px;
+  }
+
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
     font-size:13px;
     letter-spacing:.12em;
     text-transform:uppercase;
-    color:var(--amarelo);
     display:flex;
+    flex-wrap:wrap;
     align-items:center;
     gap:10px;
     margin-bottom:18px;
     position:relative;
     z-index:1;
   }
-  .eyebrow span::before{content:"⚠ ";font-size:16px;}
+  .eyebrow span::before{
+    content:"⚠ ";
+    font-size:16px;
+    color:inherit;
+  }
+  /* cores individuais de cada frase do eyebrow */
+  .eyebrow .cor1{color:var(--amarelo);}
+  .eyebrow .cor2{color:var(--branco);}
+  .eyebrow .cor3{color:var(--verde-claro);}
+
   h1{
     font-family:'Archivo Black',sans-serif;
     font-size:clamp(38px,8vw,68px);
@@ -192,6 +217,7 @@
   @media(max-width:600px){
     .atividade{flex-direction:column;gap:4px;}
     .hora{min-width:0;}
+    .slogan-mosaic{position:static;max-width:none;text-align:left;margin-bottom:16px;}
   }
 </style>
 </head>
@@ -201,10 +227,14 @@
 
 <!-- ===== TOPO DA PÁGINA (título e frase de efeito) ===== -->
 <header>
+  <!-- TROQUE O TEXTO ABAIXO PELO SLOGAN OFICIAL DA MOSAIC -->
+  <div class="slogan-mosaic">Coloque aqui o slogan da Mosaic</div>
+
   <div class="eyebrow">
-  <span>Se não for Seguro Não Faça<span>
-  <span>Nada é tão urgente que não possa ser feito com planejamento e segurança</span>
-  <span>Segurança não tem poupança, temos que ter comportamentos corretos e seguros todos os dias!</span></div>
+    <span class="cor1">Se não for Seguro Não Faça</span>
+    <span class="cor2">Nada é tão urgente que não possa ser feito com planejamento e segurança</span>
+    <span class="cor3">Segurança não tem poupança, temos que ter comportamentos corretos e seguros todos os dias!</span>
+  </div>
   <h1>SIPAT/SIPATMIN <span>2026</span></h1>
   <p class="sub">Semana Interna de Prevenção de Acidentes do Trabalho - Mosaic</p>
 </header>
@@ -288,10 +318,10 @@
       <div class="hora">07:45</div>
       <div class="atv-txt"><strong>Palestra: Saúde e Bem-Estar</strong><span>Palestrante: Renata</span><span class="local">Local: Pátio EBEC</span></div>
     </div>
- <div class="atividade destaque">
+    <div class="atividade destaque">
       <div class="hora">11:30–14:30</div>
       <div class="atv-txt"><strong>Almoço Especial</strong></div>
-      <div class="atv-txt"><strong>Stands: Diphoterine, Pontos Cegos, Grades e Pisos, EPIs, Doação de Adubo/Impactos Ambientais</span><span class="local">Local: Sala de Descanso</span></div>
+      <div class="atv-txt"><strong>Stands: Diphoterine, Pontos Cegos, Grades e Pisos, EPIs, Doação de Adubo/Impactos Ambientais</strong><span class="local">Local: Sala de Descanso</span></div>
     </div>
 
     <div class="local-label">Terminal</div>
@@ -316,10 +346,10 @@
       <div class="hora">07:45</div>
       <div class="atv-txt"><strong>Palestra: Saúde e Bem-Estar</strong><span>Palestrante: Renata</span><span class="local">Local: Pátio EBEC</span></div>
     </div>
- <div class="atividade destaque">
+    <div class="atividade destaque">
       <div class="hora">11:30–14:30</div>
-       <div class="atv-txt"><strong>Almoço Especial</strong></div>
-      <div class="atv-txt"><strong>Stands: Diphoterine, Pontos Cegos, Grades e Pisos, EPIs, Doação de Adubo/Impactos Ambientais</span><span class="local">Local: Sala de Descanso</span></div>
+      <div class="atv-txt"><strong>Almoço Especial</strong></div>
+      <div class="atv-txt"><strong>Stands: Diphoterine, Pontos Cegos, Grades e Pisos, EPIs, Doação de Adubo/Impactos Ambientais</strong><span class="local">Local: Sala de Descanso</span></div>
     </div>
 
     <div class="local-label">Terminal</div>
